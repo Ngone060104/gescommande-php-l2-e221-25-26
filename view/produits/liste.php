@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -28,6 +29,9 @@
       </div>
     </div>
   </nav>
+=======
+
+>>>>>>> 1f39b69bca60efad717bd45c3a7d1c8bec248e3f
 
   <!-- En-tête -->
   <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between">
@@ -35,7 +39,11 @@
       <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Produits</h2>
       <p class="mt-1 text-sm text-gray-500">Gérez votre catalogue de produits.</p>
     </div>
+<<<<<<< HEAD
     <a href="formulaire.html" class="mt-4 sm:mt-0 inline-flex items-center px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition shadow-sm">
+=======
+    <a href="<?=path("produit","ajout")?>" class="mt-4 sm:mt-0 inline-flex items-center px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition shadow-sm">
+>>>>>>> 1f39b69bca60efad717bd45c3a7d1c8bec248e3f
       + Ajouter un produit
     </a>
   </header>
@@ -47,9 +55,14 @@
         <table class="min-w-full divide-y divide-gray-200">
           <thead class="bg-gray-50">
             <tr>
+<<<<<<< HEAD
               <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">ID</th>
               <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Réf.</th>
               <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Nom</th>
+=======
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Réf.</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Libelle</th>
+>>>>>>> 1f39b69bca60efad717bd45c3a7d1c8bec248e3f
               <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Description</th>
               <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">Prix U.</th>
               <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">Stock</th>
@@ -57,6 +70,7 @@
             </tr>
           </thead>
           <tbody class="bg-white divide-y divide-gray-200">
+<<<<<<< HEAD
             <tr class="hover:bg-gray-50">
               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
               <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-gray-500">REF001</td>
@@ -124,15 +138,32 @@
               <td class="px-6 py-4 text-sm text-gray-600 max-w-xs truncate">Casque studio circum-auriculaire</td>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-700 font-medium">199,99 €</td>
               <td class="px-6 py-4 whitespace-nowrap text-center"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">15</span></td>
+=======
+           <?php foreach ($produits as $produit):?>
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-gray-500"><?=$produit["reference"]?></td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><?=$produit["libelle"]?></td>
+              <td class="px-6 py-4 text-sm text-gray-600 max-w-xs truncate"><?=$produit["description"]?></td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-700 font-medium"><?=$produit["prix"]?></td>
+              <td class="px-6 py-4 whitespace-nowrap text-center"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800"><?=$produit["stock"]?></span></td>
+>>>>>>> 1f39b69bca60efad717bd45c3a7d1c8bec248e3f
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
                 <a href="formulaire.html?id=6" class="inline-flex items-center px-3 py-1.5 bg-indigo-50 text-indigo-700 rounded-md hover:bg-indigo-100 text-xs font-medium">Modifier</a>
                 <a href="#modal-6" class="inline-flex items-center px-3 py-1.5 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-xs font-medium">Supprimer</a>
               </td>
             </tr>
+<<<<<<< HEAD
           </tbody>
         </table>
       </div>
       <div class="p-4 text-sm text-gray-500 text-center border-t border-gray-100">6 produits</div>
+=======
+                       <?php endforeach ?>
+          </tbody>
+        </table>
+      </div>
+      <div class="p-4 text-sm text-gray-500 text-center border-t border-gray-100"><?=$total_produits?> produits</div>
+>>>>>>> 1f39b69bca60efad717bd45c3a7d1c8bec248e3f
     </div>
   </section>
 
@@ -198,5 +229,8 @@
     </div>
   </div>
 
+<<<<<<< HEAD
 </body>
 </html>
+=======
+>>>>>>> 1f39b69bca60efad717bd45c3a7d1c8bec248e3f

@@ -2,12 +2,24 @@
 require_once ROOT."/model/produitModel.php";
 $liste=function(){
 $produits = getAllproduits();
+<<<<<<< HEAD
 
 require_once(ROOT."view/produits/liste.php");
 };
 
 $ajout=function(){
 echo "je ajoute un produit";
+=======
+$total_produits=countTable("produit");
+    loadView("produits/liste",["produits"=>$produits,"total_produits"=>$total_produits]);
+
+
+};
+
+$ajout=function(){
+ loadView("produits/ajout",[],"side");
+
+>>>>>>> 1f39b69bca60efad717bd45c3a7d1c8bec248e3f
 };
 
 $detail=function(){

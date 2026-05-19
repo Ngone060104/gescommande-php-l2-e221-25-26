@@ -2,6 +2,7 @@
 require_once ROOT."/model/commandeModel.php";
 $liste=function(){
 $commandes = getAllcommandes();
+<<<<<<< HEAD
 
 require_once(ROOT."view/commandes/liste.php");
 };
@@ -12,6 +13,19 @@ echo "je ajoute un commande";
 
 $detail=function(){
 echo "je detail un commande";
+=======
+$total_commandes=countTable("commande");
+loadView("commandes/liste",["commandes"=>$commandes,"total_commandes"=>$total_commandes]);
+
+};
+
+$ajout=function(){
+loadView("commandes/ajout",[], "side");
+};
+
+$detail=function(){
+loadView("commandes/detail");
+>>>>>>> 1f39b69bca60efad717bd45c3a7d1c8bec248e3f
 };
 
 $modifier=function(){

@@ -1,6 +1,11 @@
 <?php
+<<<<<<< HEAD
 function openConnexion() {
 function openConnection() {
+=======
+
+function openConnexion() {
+>>>>>>> 1f39b69bca60efad717bd45c3a7d1c8bec248e3f
     $con = null;
 try
 {
@@ -15,6 +20,7 @@ try
 }
 
 
+<<<<<<< HEAD
 }
 
 function closeConnexion($con){
@@ -53,21 +59,43 @@ function executeUpdate(string $sql,array $data){
         $statement->execute($data);
    closeConnexion($conn);
 return $con;
+=======
+>>>>>>> 1f39b69bca60efad717bd45c3a7d1c8bec248e3f
 }
 
-function closeConnection($con){
+function closeConnexion($con){
     $con=null;
 }
 
-function excuteSelect($sql,$one=false){
-      $datas=null;
-    $pdo=openConnection();
-   $stm= $pdo->query($sql);
-    $datas= $stm->fetchAll();
-    closeConnection($pdo);
-    return  $datas;
+// function excuteSelect($sql,$one=false){
+//       $datas=null;
+//     $pdo=openConnexion();
+//    $stm= $pdo->query($sql);
+//     $datas=$one==true?$stm->fetch():$stm->fetchAll();
+//     closeConnexion($pdo);
+//     return  $datas;
     
-}
-function excuteUpdate($sql){
+// }
 
+// function excuteUpdate($sql){
+
+// }
+
+function executeSelect(string $sql,array $data=[],$one=false) {
+        $result=null;
+        $conn=openConnexion();
+        $statement = $conn->prepare($sql);
+      count($data)==0?$statement->execute():$statement->execute($data);
+      $result=$one==true?$statement->fetch():$statement->fetchAll();
+        closeConnexion($conn);
+        return $result ;
+  
+}
+
+
+function executeUpdate(string $sql,array $data){
+    $conn=openConnexion();
+        $statement = $conn->prepare($sql);
+        $statement->execute($data);
+   closeConnexion($conn);
 }

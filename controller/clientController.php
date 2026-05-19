@@ -1,15 +1,19 @@
 <?php
 require_once ROOT."/model/clientModel.php";
 $liste=function(){
+<<<<<<< HEAD
 $clients = getAllclients();
 
     var_dump(getAllProduits());
+=======
+>>>>>>> 1f39b69bca60efad717bd45c3a7d1c8bec248e3f
 $clients = getAllclients();
-require_once(ROOT."view/clients/liste.php");
+$total_client= countTable("client");
+loadView("clients/liste",["clients"=>$clients,"total_client"=>$total_client]);
 };
 
 $ajout=function(){
-echo "je ajoute un client";
+loadView("clients/ajout",[],"side");
 };
 
 $detail=function(){
